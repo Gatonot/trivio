@@ -1,0 +1,80 @@
+@import 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap';
+@import 'variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background: #f4f4f4;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: $breakpoint-md;
+  width: 82.1%;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-md) {
+    max-width: $breakpoint-sm;
+  }
+}
+
+h2 {
+  $header-size: $h2;
+  color: $primary-color;
+  font-size: $header-size;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: calc($header-size / 1.25);
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: calc($header-size / 1.6);
+    line-height: calc($header-size / 1.25 * 0.75);
+  }
+}
+
+h3 {
+  $header-size: $h3;
+  color: $primary-color;
+  font-size: $header-size;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: calc($header-size / 1.25);
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: calc($header-size / 1.6);
+    line-height: calc($header-size / 1.25 * 0.75);
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+.mt-12 {
+  margin-top: 48px;
+}
+.mt-4 {
+  margin-top: 16px;
+}
+.mt-3 {
+  margin-top: 12px;
+}
