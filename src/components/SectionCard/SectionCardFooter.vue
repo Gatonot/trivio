@@ -53,7 +53,7 @@
       },
       saveAfterEdit(item) {
         if(this.name === names.COMPANY) {
-          this.setCompany(item)
+          this.setCompany(item.inputValue)
         } else {
           this.setUsers(item)
         }

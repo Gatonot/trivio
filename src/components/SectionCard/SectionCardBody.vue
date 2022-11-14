@@ -1,9 +1,10 @@
 <script>
-  import { mapGetters } from 'vuex'
+  import { names } from '@/constants/names.js'
   import AppCard from '@/components/AppCard.vue'
   import ButtonIcon from '@/components/ui/ButtonIcon.vue'
   import DeleteIcon from '@/components/icon-svg/DeleteIcon.vue'
   import EditIcon from '@/components/icon-svg/EditIcon.vue'
+  import { mapGetters } from "vuex";
 
   export default {
     name: 'SectionCardBody',
@@ -17,6 +18,21 @@
       list: {
         type: Array,
         required: true
+      },
+      name: {
+        type: String,
+        required: true
+      }
+    },
+    computed: {
+      ...mapGetters('company', ['getTransformCompanies']),
+      multiCard() {
+        return names.USERS === this.name
+      }
+    },
+    methods: {
+      companyName(id) {
+        return this.getTransformCompanies[id]
       }
     }
   }
@@ -30,7 +46,20 @@
         class="app-card"
         @click="$emit('edit-dialog', item.id)"
     >
-      {{ item.name }}
+
+      <div v-if="multiCard">
+        <footer class="card-footer">
+          <p class="company-name">{{ companyName(item.companyId) }}</p>
+          <div class="divider"></div>
+          <p class="name">
+            {{ item.name }}
+            <span class="birthday">{{ `(${item.birthday})` }}</span>
+          </p>
+        </footer>
+      </div>
+      <div v-else>
+        {{ item.name }}
+      </div>
 
       <template #actions>
         <div class="actions">
@@ -78,5 +107,27 @@
     position: absolute;
     top: -5px;
     right: 50px;
+  }
+
+  .card-footer {
+
+    .name {
+
+    }
+    .birthday {
+      color: $black-color;
+      opacity: .7;
+    }
+  }
+  .divider {
+    flex: 1 1 0;
+    background: $black-color;
+    height: 1px;
+    opacity: .1;
+    margin: 10px 0;
+  }
+  .company-name {
+    font-weight: 700;
+    font-size: 20px;
   }
 </style>

@@ -86,6 +86,7 @@
 
     <section-card-body
       :list="list"
+      :name="name"
       @edit-dialog="editDialog($event)"
       @delete-dialog="deleteDialog($event)"
       @close-dialog="closeDialog()"

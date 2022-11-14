@@ -4,7 +4,12 @@ const actions = {
   setUsers({ commit, state }, user) {
     const cloneUsers = JSON.parse(JSON.stringify(state.users))
     const updatedUsers = cloneUsers.map(cloneUser => (
-      cloneUser.id === user.id ? { ...cloneUser, name: user.name } : cloneUser
+      cloneUser.id === user.inputValue.id ? {
+        ...cloneUser,
+        name: user.inputValue.name,
+        companyId: user.selectValue.id,
+        birthday: user.dateBirthday
+      } : cloneUser
     ))
     commit(types.SET_USERS, updatedUsers)
 
