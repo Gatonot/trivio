@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunktrivio_vue"]=self["webpackChunktrivio_vue"]||[]).push([[430],{9338:function(e,n,t){t.r(n),t.d(n,{default:function(){return l}});var r=t(3396);function s(e,n,t,s,u,a){const c=(0,r.up)("section-card");return(0,r.wg)(),(0,r.j4)(c,{name:u.names.USERS,list:e.getUsers},null,8,["name","list"])}var u=t(3661),a=t(65),c=t(4947),i={name:"UsersView",components:{SectionCard:u.Z},data(){return{names:c.R}},computed:{...(0,a.Se)("user",["getUsers"])}},o=t(89);const d=(0,o.Z)(i,[["render",s]]);var l=d}}]);
+//# sourceMappingURL=430.a4deeb08.js.map
